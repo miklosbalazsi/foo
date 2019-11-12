@@ -8,6 +8,12 @@
   <name>foo</name>
   <url>http://maven.apache.org</url>
 
+  <properties>
+    <selenium.version>3.141.59</selenium.version>
+    <testng.version>7.0.0</testng.version>
+    <webdrivermanager.version>3.0.0</webdrivermanager.version>
+  </properties>
+
   <build>
   <plugins>
     <plugin>
@@ -40,12 +46,6 @@
       </configuration>
      </plugin>
   </plugins>
-
-    <resources>
-      <resource>
-        <directory>webdrivers</directory>
-      </resource>
-    </resources>
   </build>
 
   <dependencies>
@@ -59,20 +59,23 @@
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
-      <version>3.141.59</version>
+      <version>${selenium.version}</version>
     </dependency>
-
-    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-chrome-driver</artifactId>
-      <version>3.141.59</version>
+      <version>${selenium.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>${webdrivermanager.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-api</artifactId>
-      <version>3.141.59</version>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>${testng.version}</version>
     </dependency>
 
 
